@@ -1,6 +1,6 @@
 {
   "name": "nullable2",
-  "description": "A nullable implementation. Inspired by Kotlin.",
+  "description": "A nullable(Null safety) implementation. Inspired by Kotlin.",
   "author": {
     "name": "skt-t1-byungi",
     "email": "tiniwz@gmail.com"
@@ -12,7 +12,10 @@
   "keywords": [
     "nullable",
     "optional",
-    "proxy"
+    "proxy",
+    "null",
+    "null safe",
+    "null safety"
   ],
   "version": "0.0.3",
   "main": "index.js",
