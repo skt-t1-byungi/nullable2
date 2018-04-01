@@ -10,6 +10,8 @@ yarn add nullable2
 ```
 
 ## Usage
+
+### Basic
 #### Before
 ```js
 const item = items.findOrNull(id);
@@ -25,6 +27,19 @@ const value = nullable(items, v => v
   .getChildOrNull()
   .values
   .getValue(param))
+```
+
+### Currying
+```js
+const items$$ = nullable(items)
+
+const child = items$$(v => v
+  .findOrNull(id)
+  .getChildOrNull())
+
+const otherTitle = items$$(v => v
+  .findOrNull(otherId)
+  .title)
 ```
 
 ## Related

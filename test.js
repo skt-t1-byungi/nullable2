@@ -14,12 +14,14 @@ test('exists primitive', t => {
 })
 
 test('complex null', t => {
+  t.is(n(false, v => v.a.b), undefined)
+  t.is(n({a: 0}, v => v.a.b), undefined)
   t.is(n({a: 1}, v => v.a.b), undefined)
   t.is(n({a () {}}, v => v.a.name.test()), undefined)
   t.is(n({a: v => ({b: {get c () { return v }}})}, v => v.a(10).b.c.d), undefined)
 })
 
-test('curry', t => {
+test('currying', t => {
   const obj$ = n({a: {b: {c: 1}}})
 
   t.is(obj$(v => v.a.test), undefined)

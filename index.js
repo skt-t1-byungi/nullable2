@@ -9,7 +9,7 @@ class Chain {
     return new Proxy(noop, {
       get: (target, prop) => {
         if (prop === $$get) return Reflect.get(this, $$get, this)
-        return new Chain(src, pipes.concat(cur => cur && cur[prop]))
+        return new Chain(src, pipes.concat(cur => haveProps(cur) ? cur[prop] : undefined))
       },
 
       apply (target, thisArg, args) {
@@ -30,3 +30,7 @@ class Chain {
 const nullable2 = module.exports = (src, fn) =>
   fn ? fn(new Chain(src))[$$get]
     : fn => nullable2(src, fn)
+
+function haveProps (val) {
+  return val !== null && val !== undefined
+}
