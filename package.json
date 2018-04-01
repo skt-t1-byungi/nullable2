@@ -1,0 +1,31 @@
+{
+  "name": "nullable2",
+  "description": "A nullable implementation. Inspired by Kotlin.",
+  "author": {
+    "name": "skt-t1-byungi",
+    "email": "tiniwz@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skt-t1-byungi/nullable2.git"
+  },
+  "keywords": [
+    "nullable",
+    "optional",
+    "proxy"
+  ],
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "eslint": "^4.19.1",
+    "eslint-config-byungi": "^0.0.12"
+  },
+  "eslintConfig":{
+    "extends": "byungi"
+  }
+}
