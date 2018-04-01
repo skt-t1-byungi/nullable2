@@ -13,7 +13,7 @@ class Chain {
       },
 
       apply (target, thisArg, args) {
-        return new Chain(src, pipes.concat((cur, prev) => cur && cur.apply(prev, args)))
+        return new Chain(src, pipes.concat((cur, prev) => isFunc(cur) ? cur.apply(prev, args) : undefined))
       }
     })
   }
@@ -27,10 +27,9 @@ class Chain {
   }
 }
 
+function haveProps (val) { return val !== null && val !== undefined }
+function isFunc (fn) { return typeof fn === 'function' }
+
 const nullable2 = module.exports = (src, fn) =>
   fn ? fn(new Chain(src))[$$get]
     : fn => nullable2(src, fn)
-
-function haveProps (val) {
-  return val !== null && val !== undefined
-}
