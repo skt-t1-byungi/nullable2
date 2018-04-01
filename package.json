@@ -14,7 +14,7 @@
     "optional",
     "proxy"
   ],
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -25,7 +25,7 @@
     "eslint": "^4.19.1",
     "eslint-config-byungi": "^0.0.12"
   },
-  "eslintConfig":{
+  "eslintConfig": {
     "extends": "byungi"
   }
 }
