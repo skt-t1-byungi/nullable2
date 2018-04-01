@@ -17,7 +17,7 @@
     "null safe",
     "null safety"
   ],
-  "version": "0.0.3",
+  "version": "0.0.3-1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
